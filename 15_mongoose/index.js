@@ -23,8 +23,9 @@ const pessoaSchema = new mongoose.Schema({
 const Pessoa = mongoose.model("Pessoa", pessoaSchema)
 
 const matheus = new Pessoa({
-    nome: "Matheus",
-    idade: 30
+    nome: "Devyd",
+    idade: 30,
+    profissao: "Programado"
 })
 
 console.log(matheus.nome)
@@ -32,24 +33,24 @@ console.log(matheus.idade)
 
 // 4 - Salvar dados
 
-// matheus.save(function(err) {
-//     if(err) {
-//         console.log(err)
-//     }
-// })
+matheus.save(function(err) {
+     if(err) {
+        console.log(err)
+    }
+ });
 
 // 5 - encontrar dados
 
-Pessoa.findOne({ nome: 'Matheus' }, function(err, pessoa) {
+Pessoa.findOne({ nome: 'Devyd' }, function(err, pessoa) {
     console.log(pessoa)
 })
 
 // 6 - insertmany
 
-// Pessoa.insertMany([
-//     {nome: "Pedro", idade: 40},
-//     {nome: "Maria", idade: 25},
-//     {nome: "José", idade: 23}
+//Pessoa.insertMany([
+ //    {nome: "Pedro", idade: 40, profissao: "Engenheiro"},
+//     {nome: "Maria", idade: 25, profissao: "Advogada"},
+ //    {nome: "José", idade: 23}
 // ])
 
 
